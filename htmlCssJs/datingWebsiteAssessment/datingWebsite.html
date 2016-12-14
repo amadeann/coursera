@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dating Website</title>
+    <style>
+      fieldset {
+        background:lightyellow;
+        border:10px solid yellow;
+        margin-bottom:10px;
+        width: 720px;
+      }
+
+      label, span.span_label {
+        width: 180px;
+        display:inline-block;
+        text-align: right;
+        vertical-align: top;
+      }
+
+      label.auto_labels {
+        width:auto;
+      }
+
+      span.side_text {
+        text-align:center;
+        display: inline-block;
+        vertical-align: top;
+        color: white;
+      }
+
+      span.side_text_left {
+        background: crimson;
+      }
+
+      span.side_text_right {
+        background: purple;
+      }
+
+      textarea {
+        width:360px;
+        height:50px;
+      }
+
+      label:hover, input:hover, .large_hover:hover {
+        font-size:20px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+    <form method="post" enctype="multipart/form-data" action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+      <fieldset>
+        <legend>Your Face:</legend>
+        <label for="avatar">Your image:</label>
+        <input type="file" id="avatar" name="avatar"><br />
+        <span class="span_label">Image Preview: </span>
+        <img id="preview" src=""></img>
+      </fieldset>
+      <fieldset>
+        <legend>Your General Details:</legend>
+        <!-- Client Name -->
+        <label for="clientName">Name:</label>
+        <input type="text" name="clientName" id="clientName"><br />
+        <!-- Gender -->
+        <span class="span_label">Gender:</span>
+        <input type="radio" name="gender" value="Male" id="g_male">
+        <label for="g_male" class="auto_labels">Male</label>
+        <input type="radio" name="gender" value="Female" id="g_female">
+        <label for="g_female" class="auto_labels" class="auto_labels">Female</label><br />
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" min="0"><br />
+        <!-- Date of birth -->
+        <label for="dateOfBirth">Date of birth:</label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth"><br />
+        <!-- Favorite color -->
+        <label for="color">Favorite color:</label>
+        <input type="color" name="color" id="color"><br />
+        <!-- Country -->
+        <label for="country">Which country:</label>
+        <select name="country" id="country">
+          <option value="No Selection">No Selection</option>
+          <option value="United States">United States</option>
+          <option value="Canada">Canada</option>
+          <option value="Germany">Germany</option>
+          <option value="Australia">Australia</option>
+          <option value="New Zealand">New Zealand</option>
+        </select><br />
+      </fieldset>
+      <fieldset>
+        <legend>Your Indicators:</legend>
+        <!-- Client Name -->
+        <label for="clientName">Height:</label>
+        <span class="side_text side_text_left">Short</span><input type="range" name="height" id="height" min="0" max="100"><span class="side_text side_text_right">Tall</span><br />
+        <!-- Salary -->
+        <label for="age">Salary:</label>
+        <span class="side_text side_text_left">Poor</span><input type="range" name="salary" id="salary" min="0" max="100"><span class="side_text side_text_right">Rich</span></span><br />
+      </fieldset>
+      <fieldset>
+        <legend>Your Contact Information:</legend>
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email"><br />
+        <!-- Tel -->
+        <label for="tel">Mobile:</label>
+        <input type="tel" name="tel" id="tel"><br />
+        <!-- Address -->
+        <label for="address">Address:</label>
+        <textarea rows="2" cols="40" name="address" id="address">Your address goes here</textarea><br />
+        <!-- Contact method: -->
+        <span class="span_label">Method to contact you:</span>
+        <input type="checkbox" name="contact_method" id="email_m" value="Email">
+        <label for="email_m" class="auto_labels">Email</label>
+        <input type="checkbox" name="contact_method" id="whatsapp_m" value="Whatsapp">
+        <label for="whatsapp_m" class="auto_labels">Whatsapp</label>
+        <input type="checkbox" name="contact_method" id="chat_m" value="In-app chat">
+        <label for="chat_m" class="auto_labels">In-app chat</label>
+      </fieldset>
+      <input type="submit" value="Submit">
+    </form>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+  </body>
+</html>
