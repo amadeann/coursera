@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>JavaScript Guessing Game</title>
+	</head>
+	<body onload="do_game()">
+		<script type="text/javascript">
+			var colors = ["blue", "cyan", "green", "indigo", "magenta", "orange", "purple", "white", "yellow"];
+			var randomNum = Math.floor(Math.random()*colors.length);
+			var color = colors[randomNum];
+			var userColor;
+			var count;
+			function do_game() {
+				var finished = false;
+				count = 0;
+				var colorsAsText = colors.join(', ');
+
+				//Display the target
+				alert("Traget color is: " + color);
+				while (!finished) {
+					userColor = prompt("I am thinking of one of the colors:\n\n" + colorsAsText + "\n\nGuess which one!");
+					count += 1;
+					finished = check_guess();
+				}
+			}
+
+			function check_guess() {
+				if (colors.indexOf(userColor) == -1) {
+					alert("I don’t recognize that color!");
+					return false;
+				};
+
+				if (userColor > color) {
+					alert("Your input is alphabetically higher than mine!");
+					return false;
+				}
+
+				if (userColor < color) {
+					alert("Your input is alphabetically lower than mine!");
+					return false;
+				}
+
+				if (userColor === color) {
+					myBody=document.getElementsByTagName("body")[0];
+					myBody.style.background=color;
+					var attempts ;
+					if (count == 1) {
+						attempts = " attempt.";
+					} else {
+						attempts = " attempts.";
+					};
+					alert("You rock! Indeed, the color is: " + color +
+						"\n\nIt took you " + count + attempts);
+					return true;
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>
