@@ -1,0 +1,14 @@
+img {
+	position: absolute;
+}
+
+div {
+	position: absolute;
+	width:500px;
+	height:500px;
+}
+
+div#rightSide {
+    border-left: 1px solid #000000;
+    left: 500px;
+}
